@@ -14,12 +14,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Java/Core Language/Collections Framework.md",
+                "file": "Java/Core Language/Java Fundamentals (Core Language Concept).md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Collections Framework"
+              "title": "Java Fundamentals (Core Language Concept)"
             }
           },
           {
@@ -49,13 +49,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Java/Core Language/Collections Framework.md",
+                "file": "Java/Core Language/Java Fundamentals (Core Language Concept).md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Collections Framework"
+              "title": "Outline of Java Fundamentals (Core Language Concept)"
             }
           }
         ]
@@ -222,6 +222,7 @@
   },
   "active": "6c59ed4b53fc01d1",
   "lastOpenFiles": [
+    "Java/Core Language/Collections Framework.md",
     "Spring EcoSystem/Spring Framework/Spring Framework Overview.md",
     "Spring EcoSystem/Spring Framework/Spring Framework Deep Dive.md",
     "Spring EcoSystem/Spring Framework/Spring AOP.md",
@@ -230,7 +231,6 @@
     "Spring EcoSystem/Security and Data Access/Spring Security.md",
     "Spring EcoSystem/Security and Data Access/Spring Data JPA Repositories and Query Patterns.md",
     "Java/JVM/JVM Internals (Memory, GC & Class Loading).md",
-    "Java/Core Language/Collections Framework.md",
     "Java/Core Language/Java Fundamentals (Core Language Concept).md",
     "Java/JVM/Stack vs Heap Memory in Java.md",
     "Java/JVM/Virtual Thread.md",
