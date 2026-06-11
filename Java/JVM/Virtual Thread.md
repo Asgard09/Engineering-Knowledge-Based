@@ -1,21 +1,23 @@
-# 1. The Bottle neck: Platform Thread
-Every time you called `new Thread()` –> Java create Platform Thread. 
-## 1.1. The Problem
-OS Thread are incredibly heavy.
-1. They require ~1MB of RAM just for their call stack. If you create 10000 threads –> burned 10GB of RAM
-2. Generating Thread involves trapping in the OS kernel 
-3. Switching  between threads takes 1-5 microseconds
-Traditional server use Thread Pools limit 200 threads –> the 201st user will wait until one of the 200 complete.
-## 1.2. The Numbers
-|Resource|Platform Thread|Virtual Thread|
-|---|---|---|
-|**Memory**|~1MB per thread (fixed stack)|~1KB initially, grows as needed|
-|**Creation cost**|~1ms (OS kernel call)|~1μs (JVM-managed)|
-|**Context switch**|1–5μs (OS scheduler)|~200ns (JVM scheduler)|
-|**Max count**|~5,000–10,000 (limited by RAM)|~1,000,000+ (limited by heap)|
-|**Scheduling**|OS kernel|JVM ForkJoinPool|
-# 2. What is Virtual Thread
-Virtual threads are managed entirely by the **Java Virtual Machine (JVM)**, not the OS. They are extraordinarily cheap to create, consume only bytes of memory, and you can comfortably create **millions** of them on a standard laptop.
-***Imagine a giant customer service Call Center.**
-- **Platform Threads:** You hire 200 employees (OS Threads). Every time the phone rings, an employee picks up. The customer says, "Hold on, let me find my credit card." The employee is forced to hold the phone to their ear in total silence for 5 minutes (Blocking I/O). Meanwhile, 10,000 other customers are getting a busy signal because all 200 employees are waiting on hold.
-- **Virtual Threads:** You still have 200 employees (Carrier Threads), but now they have millions of active phone lines (Virtual Threads). When a customer says, "Hold on," the employee instantly puts that line on hold (Unmounting) and immediately answers the next ringing phone. When the first customer finally finds their credit card, the employee grabs that line back (Mounting) and continues the transaction.
+# 1. Concept
+This is the way use to decouple Java threads from OS thread. When once Virtual Thread has blocked –> JVM will suspend it, and free carried thread, so another VT can run on it.
+# 2. Why it matters ?
+## 2.1. The world before VTs
+Before VTs each thread has a mapping 1:1 with OS thread, it’s means, each thread has:
+- Memory call stack (~1MB) : 10000 threads * 1MB = 10GB
+- Context Switching cost
+–> Creating thousand threads became expensive
+## 2.2. How did we solve this before
+Use Thread Pools:
+- Reusing expensive OS threads –> request will waiting for thread in thread pools completed 
+- The Problem: each application need to tune thread pools
+	- Too small: Request wait in queue
+	- Too large: Memory wasting, Context Switching Cost
+Use reactive programming: 
+- The idea: don’t block thread
+- The problem: Harder code, debugging, many things to learn
+## 2.3. How VM solve well
+The VTs are a lightweight JVM-managed threads, multiple VTs can work with a small number of OS threads, when facing with blocking operation instead of blocking OS thread —> JVM will unmount Virtual Thread, let the OS work with another VTs. When the blocking operation completed –> the VTs rescheduled and continues execution on available OS thread
+# 3. Pitfalls
+- The JVM cannot create more CPU: VM improves concurrency not parallelism. ex: 8 CPU cores, 10000 VTs –> only 8 VTs can executes simultaneously
+- Some operations prevent unmount: block when holding sync monitor, native methods
+- Unlimited threads can kill the system: The JVM might be survive, but the downstream service can’t
