@@ -1,5 +1,5 @@
 # 1. Concepts
-Is a mechanism that automatically configures Spring beans base on dependencies, current configuration in application.
+Is a feature of Spring Boot that automatically configures Spring beans base on library available, current configuration in application.
 # 2. Why it matters?
 ## 2.1. The world before
 Before Spring Boot (Spring Framework era): one application need a lots of manual configuration:

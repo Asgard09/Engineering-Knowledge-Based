@@ -1,5 +1,5 @@
 # 1. Concept
-This is the way use to decouple Java threads from OS thread. When once Virtual Thread has blocked –> JVM will suspend it, and free carried thread, so another VT can run on it.
+A Virtual Thread is a lightweight thread managed by the JVM. It decouples application concurrency from the number of OS threads, allowing application create millions of concurrent task
 # 2. Why it matters ?
 ## 2.1. The world before VTs
 Before VTs each thread has a mapping 1:1 with OS thread, it’s means, each thread has:
@@ -16,7 +16,7 @@ Use reactive programming:
 - The idea: don’t block thread
 - The problem: Harder code, debugging, many things to learn
 ## 2.3. How VM solve well
-The VTs are a lightweight JVM-managed threads, multiple VTs can work with a small number of OS threads, when facing with blocking operation instead of blocking OS thread —> JVM will unmount Virtual Thread, let the OS work with another VTs. When the blocking operation completed –> the VTs rescheduled and continues execution on available OS thread
+The VTs are a lightweight JVM-managed threads, multiple VTs can work with a small number of OS threads, when facing with blocking operation instead of blocking OS thread —> JVM will unmount Virtual Thread from its carrier thread, let the carrier threads free to execute other VT. When the blocking operation completed –> the VTs rescheduled and continues execution on available carrier thread
 # 3. Pitfalls
 - The JVM cannot create more CPU: VM improves concurrency not parallelism. ex: 8 CPU cores, 10000 VTs –> only 8 VTs can executes simultaneously
 - Some operations prevent unmount: block when holding sync monitor, native methods
