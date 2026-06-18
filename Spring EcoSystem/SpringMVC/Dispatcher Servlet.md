@@ -25,5 +25,5 @@ Responsibilities:
 1. Receive all incoming requests.
 2. Find the correct controller (through by `HandlerMapping`).
 3. Invoke the controller methods (Spring decides when to execute based on request) –> IOC.
-4. Use [[View Resolvers]] to resolve the view.
+4. Rendering view through [[View Resolvers]].
 5. Send back response to the client.

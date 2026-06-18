@@ -1,5 +1,5 @@
 # 1. Concepts
-A view resolvers is the Spring MVC components used to map the logical view name return by controller to view page should be rendered.
+A view resolvers is the Spring MVC components used to map the logical view name return by controller to view resource that should be rendered.
 # 2. Why it matters?
 ## 2.1. The world before
 Before the Spring MVC, developer must let the Servlet know what exactly path, technologies, in the case want to change from jsp to thymleaf –> modifying all codes –> tightly coupled to view technology and boilerplate.
