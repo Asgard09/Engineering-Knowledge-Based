@@ -1,68 +1,15 @@
-# 1. What is Spring Security
-Spring Security is a authentication and access control framework for Java application
-# 2. Why use Spring Security
-
-| Security needs      | Spring Provides                                                                    |
-| ------------------- | ---------------------------------------------------------------------------------- |
-| Authentication      | Supports form login, HTTP Basic, OAuth2, SAML, LDAP, [[JWT]], and custom providers |
-| Authorization       | URL-based and method-level access control with roles and permissions               |
-| [[CSRF]] Protection | Enabled by default for stateful applications                                       |
-| Session Management  | Session fixation protection, concurrent session control                            |
-| Password Storage    | `BCryptPasswordEncoder` and other secure hashing algorithms                        |
-| [[CORS]]            | Configurable cross-origin resource sharing                                         |
-| Security Header     | X-Content-Type-Options, X-Frame-Options, HSTS, etc.                                |
-# 3. How does Spring Security Works
-## 3.1. The Security Filter Chain
-Spring Security works through a filter chain that intercepts every HTTP request before it reaches 
-```
-HTTP Request
-    │
-    ▼
-┌───────────────────────────────────┐
-│   SecurityFilterChain             │
-│  ┌─────────────────────────────┐  │
-│  │ CorsFilter                  │  │
-│  │ CsrfFilter                  │  │
-│  │ AuthenticationFilter        │  │
-│  │ ExceptionTranslationFilter  │◄─┼── Catches Security Exceptions
-│  │ AuthorizationFilter         │◄─┼── (Replaced FilterSecurityInterceptor in Spring Sec 6)
-│  └─────────────────────────────┘  │
-└───────────────────────────────────┘
-    │
-    ▼
-DispatcherServlet (Spring MVC)
-    │
-    ▼
-Controller / Endpoint
-```
-## 3.2. Authentication Architecture
-```
-AuthenticationFilter
-    │
-    ▼
-AuthenticationManager
-    │
-    ▼
-AuthenticationProvider (can have multiple)
-    │
-    ▼
-UserDetailsService (loads user data)
-    │
-    ▼
-PasswordEncoder (verifies password)
-    │
-    ▼
-SecurityContext (stores authenticated principal)
-```
-## 3.3. End to end Authentication Flow
-1. Clients send HTTP request.
-2. DelegatingFilterProxy intercepts the servlet request and delegates it to the Spring-managed FilterChainProxy
-3. FilterChainProxy determine which SecurityFilterChain to invoke base on the request URL.
-4. The SecurityFilterChain includes multiple filter, eventually executing Authentication Filter (`UsernamePasswordAuthenticationFilter`)
-5. The Authentication Filter extracts credentials from the request, and creates unauthenticated Authentication Object. 
-6. This Authentication Object is passed into Authentication Manager (the default implementation is ProviderManager).
-7. The ProviderManager delegates to one or more AuthenticationProviders (e.g., `DaoAuthenticationProvider`)
-8. The `AuthenticationProvider` use a `UserDetailsService` to load the user's record.
-9. The `UserDetailsService` returns a `UserDetails` object (containing password and authorities).
-10. The `AuthenticationProvider` validates the credentials. If successful, it creates fully, authenticated Authentication Object, and return back to the `Provider Manager`, which return it back to the `Authentication Filter`
-11. Finally, the `AuthenticationFilter` stores this authenticated object in `SecurityContextHolder` where it can be used for authorization decisions later
+# 1. Definition
+Spring Security is a powerful authentication (who you are) and authorization (what are you allowed to do) frame work for Java application. It secured request before reaching controllers. 
+# 2. Why it matter?
+## 2.1. The world before
+Without standard frame work, every team need to implement security logic from scratch –> different, and cause vulnerabilities.
+## 2.2. How it solve well
+Use `SecurityFilterChain` to centralize authentication, authorization, session management, attack protection ([[CSRF]] , [[CORS]]),  password encoding
+The `SecurityFilterChain` will intercept requests before reaching `DispatcherServlet`, it include: 
+`CorsFilter` `CsrfFilter` `AuthenticationFilter` `ExceptionTranslationFilter` `AuthorizationFilter`
+## 2.3. Authentication workflow
+1. The client send request.
+2. `SecurityFilterChain` intercepted that request.
+3. The framework checks for valid credentials (username and passwor d or a [[JWT]] token).
+4. If credential is valid –> create authentication object and stores it in `SecurityContext` (allowing application identify the currently authenticated user during request processing).
+5. If invalid –> block request automatically.

@@ -14,12 +14,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Java/JVM/Virtual Thread.md",
+                "file": "JWT.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Virtual Thread"
+              "title": "JWT"
             }
           }
         ]
@@ -35,13 +35,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Java/JVM/Virtual Thread.md",
+                "file": "JWT.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Virtual Thread"
+              "title": "Outline of JWT"
             }
           }
         ]
@@ -208,6 +208,11 @@
   },
   "active": "5a30b4b292ecd03c",
   "lastOpenFiles": [
+    "CORS.md",
+    "CSRF.md",
+    "JWT.md",
+    "Spring EcoSystem/Security and Data Access/Spring Security.md",
+    "Java/JVM/Virtual Thread.md",
     "Java/JVM/Stack vs Heap Memory in Java.md",
     "Spring EcoSystem/Spring Boot/Spring Boot - Overview and Why It Matters.md",
     "Spring EcoSystem/Spring Boot/Spring Boot - Deep Dive/Spring Auto Config.md",
@@ -216,11 +221,9 @@
     "Spring EcoSystem/SpringMVC/Dispatcher Servlet.md",
     "Spring EcoSystem/SpringMVC/View Resolvers.md",
     "Spring EcoSystem/Spring Framework/Spring AOP.md",
-    "Spring EcoSystem/Security and Data Access/Spring Security.md",
     "Spring EcoSystem/Security and Data Access/Spring Data JPA Repositories and Query Patterns.md",
     "Spring EcoSystem/Spring Framework/Spring Framework Deep Dive.md",
     "Spring EcoSystem/SpringMVC/Interceptors.md",
-    "Java/JVM/Virtual Thread.md",
     "Spring EcoSystem/SpringMVC",
     "Spring EcoSystem/Spring Boot/Spring Boot - Internals & Architecture.md",
     "Spring EcoSystem/Spring Boot/Spring Boot - Deep Dive",
@@ -239,11 +242,8 @@
     "Database",
     "Pasted image 20260604213700.png",
     "Java/IO and Modern Java/Java New Features From 8 To 21+.md",
-    "Testing and Mocking/Annotations (JUnit, Spring).md",
     "Java/IO and Modern Java",
-    "Testing and Mocking/Test Concepts and Best Practices.md",
     "Testing and Mocking",
-    "Java/Concurrency/Concurrency Fundamentals.md",
     "SOLID",
     "Pasted image 20260522200432.png",
     "Pasted image 20260522195741.png",
