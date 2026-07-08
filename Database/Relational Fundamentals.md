@@ -29,3 +29,4 @@ The difference between Left, Right, Inner, Full Outer is the way they handle unm
 [[SQL Example#1. JOINS]]
 # 6. Null Handling
 Null in SQL represent for unknow value, it not 0, empty or false. For checking Null, cannot use == or != because null is not considered equal any value, include another null. Instead, SQL provides IS NULL and IS NOT NULL operations.
+# 7. Group By in SQL
