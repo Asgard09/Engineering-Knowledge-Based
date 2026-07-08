@@ -14,12 +14,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "JWT.md",
+                "file": "Database/Relational Fundamentals.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "JWT"
+              "title": "Relational Fundamentals"
             }
           }
         ]
@@ -35,13 +35,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "JWT.md",
+                "file": "Database/Relational Fundamentals.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of JWT"
+              "title": "Outline of Relational Fundamentals"
             }
           }
         ]
@@ -208,11 +208,25 @@
   },
   "active": "5a30b4b292ecd03c",
   "lastOpenFiles": [
+    "Database/SQL Example.md",
+    "Database/Database Design and Normalization.md",
+    "Database/Relational Fundamentals.md",
+    "Pasted image 20260708180825.png",
+    "Pasted image 20260708180409.png",
+    "Pasted image 20260708180229.png",
+    "Pasted image 20260708180156.png",
+    "Pasted image 20260708180057.png",
+    "Database/Untitled",
+    "DSA/Dynamic Programming.md",
+    "Java/JVM/Virtual Thread.md",
+    "Java/JVM/JVM Internals (Memory, GC & Class Loading).md",
+    "Java/Core Language/Java Fundamentals (Core Language Concept).md",
+    "Java/Core Language/Collections Framework.md",
+    "JWT.md",
+    "DSA",
     "CORS.md",
     "CSRF.md",
-    "JWT.md",
     "Spring EcoSystem/Security and Data Access/Spring Security.md",
-    "Java/JVM/Virtual Thread.md",
     "Java/JVM/Stack vs Heap Memory in Java.md",
     "Spring EcoSystem/Spring Boot/Spring Boot - Overview and Why It Matters.md",
     "Spring EcoSystem/Spring Boot/Spring Boot - Deep Dive/Spring Auto Config.md",
@@ -230,21 +244,11 @@
     "Behaviors/Careers Path.md",
     "Behaviors/Careers Path",
     "Behaviors",
-    "Java/Core Language/Java Fundamentals (Core Language Concept).md",
-    "Java/Core Language/Collections Framework.md",
-    "Spring EcoSystem/Spring Framework/Spring Framework Overview.md",
-    "Java/JVM/JVM Internals (Memory, GC & Class Loading).md",
-    "Database Internal/Untitled.md",
     "Database Internal/Untitled",
     "Database Internal",
-    "Database/Database Design and Normalization.md",
-    "Database/Relational Fundamentals.md",
     "Database",
     "Pasted image 20260604213700.png",
-    "Java/IO and Modern Java/Java New Features From 8 To 21+.md",
     "Java/IO and Modern Java",
-    "Testing and Mocking",
-    "SOLID",
     "Pasted image 20260522200432.png",
     "Pasted image 20260522195741.png",
     "Pasted image 20260522195757.png",
