@@ -30,4 +30,17 @@ The difference between Left, Right, Inner, Full Outer is the way they handle unm
 # 6. Null Handling
 Null in SQL represent for unknow value, it not 0, empty or false. For checking Null, cannot use == or != because null is not considered equal any value, include another null. Instead, SQL provides IS NULL and IS NOT NULL operations.
 # 7. Group By in SQL
-# 8. Aggregation Function
+GROUP BY is used to group rows have the same value in one or more columns into a single group. It is commonly use aggregate function like COUNT(), SUM(), MAX(), MIN(). Every non-aggregated function in SELECT must be appear in GROUP BY.
+# 8. Index in SQL
+Index is a database object used to improve speed of data’s retrieval. It similar like the index of a book. Instead of let the database scan full-table, by index it can quicky locate in the exact rows. However it have cost, for DML operations like INSERT, UPDATE, DELETE, database need more time to update the index.
+# 9. Normalization
+Normalization is a process of organizing data in multiple related data tables to reduce redundancy, improve data integrity. There are 3 common normalization
+- 1NF: Removing repeating values make sure that every column contains atomic values.
+- 2NF: Built on 1NF, removing partial dependencies all non-key value must be depend on entire primary key, matter when using composite key.
+- 3NF: Built on 2NF, removing transitive dependencies, non-key columns cannot depend another non-key columns.
+# 10. ORM, Advantages and Disadvantages
+ORM (Object Relational Mapping) is a library or framework, uses for mapping the object in application to tables in database.
+- Advantages: reducing the amount of SQL code, easy for change another DB, provide many built in features: caching, transaction manager
+- Disadvantages: encounter N+1 query problem, the generated SQL may not be optimal
+
+
