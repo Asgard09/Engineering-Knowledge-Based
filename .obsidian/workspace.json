@@ -14,12 +14,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Database/Relational Fundamentals.md",
+                "file": "Operating System/Core Concepts/Process and Threads.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Relational Fundamentals"
+              "title": "Process and Threads"
             }
           }
         ]
@@ -35,13 +35,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Database/Relational Fundamentals.md",
+                "file": "Operating System/Core Concepts/Process and Threads.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Relational Fundamentals"
+              "title": "Outline of Process and Threads"
             }
           }
         ]
@@ -208,9 +208,13 @@
   },
   "active": "5a30b4b292ecd03c",
   "lastOpenFiles": [
+    "Java/Concurrency/Concurrency Fundamentals.md",
+    "Operating System/Core Concepts/Process and Threads.md",
+    "Operating System/Core Concepts",
+    "Operating System",
+    "Database/Relational Fundamentals.md",
     "Database/SQL Example.md",
     "Database/Database Design and Normalization.md",
-    "Database/Relational Fundamentals.md",
     "Pasted image 20260708180825.png",
     "Pasted image 20260708180409.png",
     "Pasted image 20260708180229.png",
@@ -241,14 +245,11 @@
     "Spring EcoSystem/SpringMVC",
     "Spring EcoSystem/Spring Boot/Spring Boot - Internals & Architecture.md",
     "Spring EcoSystem/Spring Boot/Spring Boot - Deep Dive",
-    "Behaviors/Careers Path.md",
     "Behaviors/Careers Path",
     "Behaviors",
     "Database Internal/Untitled",
     "Database Internal",
-    "Database",
     "Pasted image 20260604213700.png",
-    "Java/IO and Modern Java",
     "Pasted image 20260522200432.png",
     "Pasted image 20260522195741.png",
     "Pasted image 20260522195757.png",

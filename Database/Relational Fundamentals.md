@@ -41,6 +41,9 @@ Normalization is a process of organizing data in multiple related data tables to
 # 10. ORM, Advantages and Disadvantages
 ORM (Object Relational Mapping) is a library or framework, uses for mapping the object in application to tables in database.
 - Advantages: reducing the amount of SQL code, easy for change another DB, provide many built in features: caching, transaction manager
-- Disadvantages: encounter N+1 query problem, the generated SQL may not be optimal
+- Disadvantages: encounter N+1 query problem, the generated SQL may not be optimal.
+# 11. N+1 Query
+The N+1 query problem occur when an application first retrieve a list of parent entities with a single query, and then execute an additional query for each parent entity’s related data.
+Solution: Retrieving both departments and employees in a single join query.
 
 

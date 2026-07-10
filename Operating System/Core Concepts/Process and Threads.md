@@ -1,0 +1,1 @@
+A process independence program in execution with it’s own system resource and memory space 
