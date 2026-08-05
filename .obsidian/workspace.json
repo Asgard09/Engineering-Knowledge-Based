@@ -14,12 +14,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Operating System/Core Concepts.md",
+                "file": "DevOps/Docker/Docker Fundamentals.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Core Concepts"
+              "title": "Docker Fundamentals"
             }
           }
         ]
@@ -35,13 +35,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Operating System/Core Concepts.md",
+                "file": "DevOps/Docker/Docker Fundamentals.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Core Concepts"
+              "title": "Outline"
             }
           }
         ]
@@ -64,7 +64,9 @@
               "type": "file-explorer",
               "state": {
                 "sortOrder": "alphabetical",
-                "autoReveal": false
+                "autoReveal": false,
+                "showSearch": false,
+                "searchQuery": ""
               },
               "icon": "lucide-folder-closed",
               "title": "Files"
@@ -208,28 +210,36 @@
   },
   "active": "5a30b4b292ecd03c",
   "lastOpenFiles": [
+    "Network/Application Layer/Application Protocols Reference.md",
+    "Network/Core Concepts.md",
+    "Network/Application Layer",
+    "DevOps/Docker/Docker Fundamentals.md",
+    "Untitled",
+    "DSA/Dynamic Programming.md",
+    "DevOps/Docker",
+    "DevOps",
+    "CSRF.md",
+    "CORS.md",
+    "JWT.md",
+    "Database/Relational Fundamentals.md",
     "Java/Concurrency/Concurrency Fundamentals.md",
+    "Java/Core Language/Collections Framework.md",
+    "Java/Core Language/Java Fundamentals (Core Language Concept).md",
+    "Network",
+    "Database/Database Design and Normalization.md",
+    "Database/SQL Example.md",
     "Operating System/Core Concepts.md",
     "Operating System/Core Concepts",
     "Operating System",
-    "Database/Relational Fundamentals.md",
-    "Database/SQL Example.md",
-    "Database/Database Design and Normalization.md",
     "Pasted image 20260708180825.png",
     "Pasted image 20260708180409.png",
     "Pasted image 20260708180229.png",
     "Pasted image 20260708180156.png",
     "Pasted image 20260708180057.png",
     "Database/Untitled",
-    "DSA/Dynamic Programming.md",
     "Java/JVM/Virtual Thread.md",
     "Java/JVM/JVM Internals (Memory, GC & Class Loading).md",
-    "Java/Core Language/Java Fundamentals (Core Language Concept).md",
-    "Java/Core Language/Collections Framework.md",
-    "JWT.md",
     "DSA",
-    "CORS.md",
-    "CSRF.md",
     "Spring EcoSystem/Security and Data Access/Spring Security.md",
     "Java/JVM/Stack vs Heap Memory in Java.md",
     "Spring EcoSystem/Spring Boot/Spring Boot - Overview and Why It Matters.md",
@@ -240,15 +250,7 @@
     "Spring EcoSystem/SpringMVC/View Resolvers.md",
     "Spring EcoSystem/Spring Framework/Spring AOP.md",
     "Spring EcoSystem/Security and Data Access/Spring Data JPA Repositories and Query Patterns.md",
-    "Spring EcoSystem/Spring Framework/Spring Framework Deep Dive.md",
-    "Spring EcoSystem/SpringMVC/Interceptors.md",
     "Spring EcoSystem/SpringMVC",
-    "Spring EcoSystem/Spring Boot/Spring Boot - Internals & Architecture.md",
-    "Spring EcoSystem/Spring Boot/Spring Boot - Deep Dive",
-    "Behaviors/Careers Path",
-    "Behaviors",
-    "Database Internal/Untitled",
-    "Database Internal",
     "Pasted image 20260604213700.png",
     "Pasted image 20260522200432.png",
     "Pasted image 20260522195741.png",
