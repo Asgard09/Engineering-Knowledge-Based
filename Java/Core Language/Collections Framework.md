@@ -47,6 +47,8 @@ Backed by doubly linked list,
 Think of `CopyOnWriteArrayList` as a "read-optimized, thread-safe cousin" of the standard `ArrayList`.
 In a multi-threaded Java environment, if one thread tries to read a standard `ArrayList` while another thread is modifying it (adding or removing items), Java will instantly throw a `ConcurrentModificationException`.
 `CopyOnWriteArrayList` fixes this problem using a very literal strategy: every time you modify the list, it creates a brand new copy of the underlying array.
+## 2.5. Common method of List
+- `addAll()` add every element from another collection into this list.
 # 3. Map implementation
 ## 3.1. HashMap Internals
 `HashMap` uses an array of buckets where each bucket is a linked list.
@@ -83,6 +85,9 @@ Is a thread-safe implementation of the Map interface in Java. It allows multiple
 | Null keys   | ✅ (one null key)     | ❌                  | ❌                      |
 | Performance | Best (single-thread) | Poor (coarse lock) | Best (concurrent)      |
 | Recommended | Single-threaded use  | Never (legacy)     | Multi-threaded use     |
+## 3.5. Common method of Map
+- `getOrDefault()` get the value of this key. If key doesn’t exist return the default value instead.
+- Iterate over Map: `Map.Entry<Integer, Integer> entry : map.entrySet()`
 # 9. Common Pitfalls in Interview
 ## 9.1. equals() without hashCode()
 In Java’s contract, two object are equal according to `equals()` method will return same `hashCode`. If only `equals()`  –> two objects are consider equal but have different hash code. This can cause unexpected behavior in hash based collections.
