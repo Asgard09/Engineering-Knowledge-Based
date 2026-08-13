@@ -19,8 +19,10 @@ The user never know exactly your backend port, they just access nginx’s port, 
 Nginx can route request into multiple service (api to Srping, chat to Node, ui to React)
 # 3. Nginx commands in Linux server
 - Check if Nginx is installed: `nginx -v`
+- Check the Nginx Configuration Syntax: `sudo nginx -t`
 - Check Nginx status: `sudo systemctl status nginx`
 - Start Nginx: `sudo systemctl status nginx`
 - Stop Nginx: `sudo systemctl stop nginx`
 - Restart Nginx: `sudo systemctl restart nginx`
 - Reload Nginx: `sudo systemctl reload nginx`
+- Open Config of Nginx: `nano /etc/nginx/sites-available/name`

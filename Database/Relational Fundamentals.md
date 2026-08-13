@@ -18,6 +18,16 @@ SQL command divided into 5 main categories
 - DCL (Data Control Language): use to manage user permission, access control, include: REVOKE, GRANT.
 - TCL (Transaction Control Language): use to manage transaction, include: COMMIT, ROLLBACK, SAVEPOINT.
 # 3. The order of SQL query
+```sql
+SELECT u.name, COUNT(o.id) AS order_count, SUM(o.total) AS revenue
+FROM users u
+JOIN orders o ON u.id = o.user_id
+WHERE u.created_at >= '2024-01-01'
+GROUP BY u.id, u.name
+HAVING COUNT(o.id) > 5
+ORDER BY revenue DESC
+LIMIT 10;
+```
 The logical execution order of a SQL query is : 
 `FROM, JOIN, WHERE, GROUP BY, HAVING, SELECT, DISTINCT, ORDER BY, LIMIT`. 
 ***Because the WHERE, HAVING evaluated before SELECT, so it cannot reference a column alias defined in SELECT clause. Also, if LIMIT is used without ORDER BY, the database doesn’t guarantee the order of return rows.***
@@ -33,7 +43,7 @@ The difference between Left, Right, Inner, Full Outer is the way they handle unm
 - Right Join just keep all rows from the right table. 
 - Full Outer return all rows from both, with missing value return it to null. 
 - Cross Join return cartesian product of two table, every rows from first table will combine with every row in second table.
-[[SQL Example#1. JOINS]]
+[[Database Example#1. JOINS]]
 # 6. Self Joins
 Where a table is joined with itself
 ```sql
@@ -50,8 +60,9 @@ Index is a database object used to improve speed of data’s retrieval. It simil
 # 10. Normalization
 Normalization is a process of organizing data in multiple related data tables to reduce redundancy, improve data integrity. There are 3 common normalization
 - 1NF: Removing repeating values make sure that every column contains atomic values.
-- 2NF: Built on 1NF, removing partial dependencies all non-key value must be depend on entire primary key, matter when using composite key.
-- 3NF: Built on 2NF, removing transitive dependencies, non-key columns cannot depend another non-key columns.
+- 2NF: Built on 1NF, all non-key columns must be depend on entire primary key, matter when using composite key.
+- 3NF: Built on 2NF non-key columns cannot depend another non-key columns.
+[[Database Example#2. Normalization]]
 # 11. ORM, Advantages and Disadvantages
 ORM (Object Relational Mapping) is a library or framework, uses for mapping the object in application to tables in database.
 - Advantages: reducing the amount of SQL code, easy for change another DB, provide many built in features: caching, transaction manager
@@ -63,5 +74,17 @@ Solution: Retrieving both departments and employees in a single join query.
 - Usually used by DML (DELETE, UPDATE, INSERT)
 - `IN` compare values with a List
 - `EXIST` check if there is at least 1 row
-
+# 14. CASE 
+Evaluate the condition and return a values when the first condition is met. like `if else if else`
+The `CASE` like the virtual calculated column
+```sql
+SELECT x, y, z, 
+CASE
+    WHEN condition1 THEN result1
+    WHEN condition2 THEN result2
+    ...
+    ELSE default_result
+END
+FROM
+```
 
