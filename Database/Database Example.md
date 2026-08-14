@@ -48,3 +48,20 @@ The primary key is `(StudentID + CourseID)` but `StudentName` depends only on `S
 | 2         | An          | 20           | Mathematics      |
 | 3         | Minh        | 10           | Computer Science |
 `DepartmentName` doesn't directly depend on `StudentID`. It depends on `DepartmentID`.
+# 3. Core DML Statement
+## 3.1. Insert
+```sql
+INSERT INTO Salary (id, name, sex, salary)
+VALUES (1, 'Alex', 'm', 5000);
+```
+## 3.2. Update
+```sql
+UPDATE Salary
+SET salary = 6000
+WHERE id = 1;
+```
+## 3.3. Delete
+```sql
+DELETE FROM Salary
+WHERE id = 1;
+```
