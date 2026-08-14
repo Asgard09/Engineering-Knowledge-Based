@@ -13,7 +13,7 @@
 SQL stands for Structure Query Language, is the standard language used to communicate with relational database. It allows to create database object, query data, modify data, and manage permissions.
 SQL command divided into 5 main categories
 - DDL (Data Definition Language): used to define the database structure, include: CREATE, ALTER, DROP, TRUNCATE
-- DML (Data Manipulation Language): used to manipulated with the data stored in database, include: UPDATE, DELETE, INSERT
+- DML (Data Manipulation Language): used to manipulated with the data stored in database, include: UPDATE, DELETE, INSERT. [[Database Example#3. Core DML Statement]]
 - DQL (Data Query Language): used to retrieve data from database, include: SELECT
 - DCL (Data Control Language): use to manage user permission, access control, include: REVOKE, GRANT.
 - TCL (Transaction Control Language): use to manage transaction, include: COMMIT, ROLLBACK, SAVEPOINT.
@@ -80,11 +80,15 @@ The `CASE` like the virtual calculated column
 ```sql
 SELECT x, y, z, 
 CASE
-    WHEN condition1 THEN result1
+    WHEN condition1 THEN result1 (can consist of column_name)
     WHEN condition2 THEN result2
     ...
     ELSE default_result
-END
+END as ....
 FROM
 ```
 
+# 15. Aggregate Function 
+- Aggregate Function without Group –> find the min/max in entire table
+- Aggregate Function with Group –> find the min/max in each groups
+- If Aggregate Function (except COUNT) receives an empty rows the result will be defined by NULL
