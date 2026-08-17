@@ -65,3 +65,20 @@ WHERE id = 1;
 DELETE FROM Salary
 WHERE id = 1;
 ```
+# 4. N+1
+```java
+// You fetch all departments:
+List<Department> departments = departmentRepository.findAll();
+// Hibernate Executes
+SELECT * FROM department;
+// Suppose there are 3 departments
+// Then you do
+for (Department department : departments) {
+    System.out.println(department.getEmployees());
+}
+// Hibernate execute
+SELECT * FROM employee WHERE department_id = 1;
+SELECT * FROM employee WHERE department_id = 2;
+SELECT * FROM employee WHERE department_id = 3;
+// So: 1 query + N Query
+```
